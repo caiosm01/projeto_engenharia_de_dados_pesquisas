@@ -1,7 +1,7 @@
 <h1>Engenharia de dados</h1>
 
 <p>Buscando centralizar os dados de diferentes plataformas num único repositório e relacioná-los para extrair insights eficientes, um Data Warehouse foi desenvolvido, com um conjunto de regras de negócio específicas buscando atender as necessidades da empresa.</p>
-<img src="modelagem.png">
+<img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/modelgem.png"  height="500px" width="2000px">
 
 <h2>Funcionalidades</h2>
 
