@@ -1,7 +1,8 @@
 <h1>Engenharia de dados</h1>
 
-<p>Buscando centralizar os dados de diferentes plataformas num único repositório e relacioná-los para extrair insights eficientes, um Data Warehouse foi desenvolvido, com um conjunto de regras de negócio específicas buscando atender as necessidades da empresa.</p>
-<img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/modelgem.png"  height="500px" width="2000px">
+<p>Com o objetivo de centralizar dados provenientes de diversas plataformas em um único repositório e relacioná-los para extrair insights eficazes, foi desenvolvido um Data Warehouse (DW) com um conjunto específico de regras de negócio, visando atender às necessidades da empresa.</p>
+<p>Para alimentar esse DW, foi criado um pipeline de ETL (Extract, Transform, Load) que busca dados de diversas fontes e formatos, utilizando planilhas e APIs. Esse processo permite relacionar dados que anteriormente não eram analisados em conjunto, pois não estavam conectados em um repositório central.</p>
+<img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/fluxograma_ETL.png"  height="600px" width="1920px">
 
 <h2>Funcionalidades</h2>
 
