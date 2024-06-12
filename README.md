@@ -4,13 +4,99 @@
 <p>Para alimentar esse DW, foi criado um pipeline de ETL (Extract, Transform, Load) que busca dados de diversas fontes e formatos, utilizando planilhas e APIs. Esse processo permite relacionar dados que anteriormente não eram analisados em conjunto, pois não estavam conectados em um repositório central.</p>
 <img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/fluxograma_ETL.png"  height="600px" width="1920px">
 
-<h2>Funcionalidades</h2>
-
+<h2>Estrutura do DW</h2>
+<p>O DW é composto por 3 databases, com tabelas relacionadas entre si.</p>
 <ol>
-    <li><strong>Automação do Google Drive:</strong> O script simula ações humanas para navegar pelo Google Drive, buscando diretórios e arquivos específicos e obtendo links para os arquivos de áudio.</li>
-    <li><strong>Manipulação de Arquivos:</strong> O programa é capaz de mover arquivos de áudio entre diretórios no sistema local.</li>
-    <li><strong>Registro de Logs:</strong> Todas as ações importantes e erros são registrados em um arquivo de log para referência futura.</li>
-    <li><strong>Interação com Banco de Dados:</strong> O script se conecta a um banco de dados MySQL para recuperar informações relacionadas aos arquivos de áudio.</li>
+    <li><h3>banco mydb:</h3></li>
+        <p>O principal é o mydb, onde ficam as tabelas com informações dos funcionários, dos projetos e das pesquisas.</p>
+        <img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/principal.png"  height="600px" width="500px">
+        <h4>Tabela projetos</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Column Name</th>
+              <th>Datatype</th>
+              <th>PK</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Projeto</td>
+              <td>TEXT</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>idProjeto</td>
+              <td>BIGINT</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td>fase_atual</td>
+              <td>INT</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>inicio_projeto</td>
+              <td>DATE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Data_pre_teste_campo</td>
+              <td>DATE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Data_pre_teste_cati</td>
+              <td>DATE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>inicio_campo</td>
+              <td>DATE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>inicio_cati</td>
+              <td>DATE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>fim_campo</td>
+              <td>DATE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>fim_cati</td>
+              <td>DATE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Quantidade_pergunta</td>
+              <td>INT</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>tipo_projeto</td>
+              <td>VARCHAR(100)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>tipo_pagamento</td>
+              <td>VARCHAR(45)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>quantidade_pesquisas</td>
+              <td>INT</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>prioridade</td>
+              <td>INT</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
 </ol>
 
 <h2>Requisitos</h2>
