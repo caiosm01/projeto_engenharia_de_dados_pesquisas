@@ -9,7 +9,7 @@
 <ol>
     <li><h3>banco mydb:</h3></li>
         <p>O principal é o mydb, onde ficam as tabelas com informações dos funcionários, dos projetos e das pesquisas.</p>
-        <img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/principal.png"  height="600px" width="500px">
+        <img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/principal.png"  height="600px" width="700px">
         <h4>Tabela projetos</h4>
         <table>
           <thead>
