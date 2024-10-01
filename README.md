@@ -2,7 +2,7 @@
 
 <p>Com o objetivo de centralizar dados provenientes de diversas plataformas em um único repositório e relacioná-los para extrair insights eficazes, foi desenvolvido um Data Warehouse (DW) com um conjunto específico de regras de negócio, visando atender às necessidades da empresa.</p>
 <p>Para alimentar esse DW, foi criado um pipeline de ETL (Extract, Transform, Load) que busca dados de diversas fontes e formatos, utilizando planilhas e APIs. Esse processo permite relacionar dados que anteriormente não eram analisados em conjunto, pois não estavam conectados em um repositório central.</p>
-<img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/fluxograma_ETL.png"  height="500px" width="1920px">
+<img src="https://github.com/caiosm01/projeto_engenharia_de_dados_agora/blob/main/fluxograma_ETL.png"  height="500px" width="1720px">
 
 <h2>Estrutura do DW</h2>
 <p>O DW é composto por 3 databases, com tabelas relacionadas entre si.</p>
