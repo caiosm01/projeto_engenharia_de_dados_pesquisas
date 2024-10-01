@@ -1,4 +1,12 @@
-query_pipe_projetos = """{allCards(pipeId:303834641) 
+from dotenv import load_dotenv
+import os
+
+################################################### VARIÁVEIS PRIVADAS ###############################################
+load_dotenv(override=True)
+id_projeto = os.getenv("id_projeto")
+id_funcionarios = os.getenv("id_funcionarios")
+
+query_pipe_projetos = """{allCards(pipeId: %d) 
   {edges
     { 
       node{
@@ -13,11 +21,11 @@ query_pipe_projetos = """{allCards(pipeId:303834641)
       }
     }
     }
-  }"""
+  }""".format(id_projeto)
 
 
 query_database_colaboradores = """{
-  table(id: "301587940") {
+  table(id: "%d") {
     table_records(last: 30) {
       edges {
         node {
@@ -31,4 +39,4 @@ query_database_colaboradores = """{
     }
   }
 }
-"""
+""".format(id_funcionarios)

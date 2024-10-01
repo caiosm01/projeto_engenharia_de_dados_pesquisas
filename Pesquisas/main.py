@@ -1,7 +1,6 @@
 from functions.api_ipesquisa import IPesquisaAPI as ip
-from SAC import satisfacao as s, medicao as m, satisfacao_ingles as si, escala as e, meta as mt
 from Agora import pesquisas as p
-from queries_and_variables import variables_sac as vs, variables_pipefy as vp, queries_pipefy as qp
+from queries_and_variables import variables as vs, variables_pipefy as vp, queries_pipefy as qp
 from functions import Database as DB, api_pipefy as AP
 import logging
 from dotenv import load_dotenv
@@ -34,7 +33,6 @@ log = logging.getLogger()
 log_messages = []
 
 ########################################### INSTÂNCIA DO BANCO DE DADOS ##############################################
-#Mysql = DB.DatabaseConnection(host='20.168.42.226', database='banco_sac', user='Geral', password='#Agora123#')
 Mysql = DB.DatabaseConnection(host=host, database=database, user=user, password=password)
 Mysql.connect()
 
@@ -54,12 +52,11 @@ api_ipesquisa = ip(usuario_ipesquisa, senha_ipesquisa)
 
 questionario = Mysql.fetch_all("SELECT * FROM mydb.i_pesquisa where status = 1;")
 
-#print(questionario)
 
 
 for index, row in questionario.iterrows():
     df = api_ipesquisa.get_csv_cases_by_id(row[0], dt_gravacao_inicio=row[3], dt_gravacao_fim=row[4])
-    #print(df)
+    
     result_pesquisa = p.pesquisas(Mysql, df, vs, row[1], row[0])
 
     if result_pesquisa[0] == 1:
@@ -81,29 +78,6 @@ for index, row in questionario.iterrows():
     print(log_message)
     log_messages.append(log_message)
 
-    func_map = [s.satisfacao,m.medicao, si.satisfacao_ingles]
-
-    for f in func_map:
-        try:
-            result_tipo = f(Mysql, df, vs, row[1])
-            log_message = f"{row[2]}: {result_tipo[1]}"
-            print(log_message)
-            log_messages.append(log_message)
-
-        except KeyError:
-            print(f"{row[2]}: Não é uma pesquisa da SAC.")
-
-
-
-df_escala = pd.read_excel(Escala_meta, sheet_name='Base_Escala', header=4)
-result_escala = e.Escala(Mysql, df_escala, vs)
-log_message = f"Escala: {result_escala}"
-log_messages.append(log_message)
-
-df_meta = pd.read_excel(Escala_meta, sheet_name='Base_Meta')
-result_meta = mt.Meta(Mysql, df_meta, vs)
-log_message = f"Meta: {result_meta}"
-log_messages.append(log_message)
 
 if log_messages:
     log.warning("\n".join(log_messages))

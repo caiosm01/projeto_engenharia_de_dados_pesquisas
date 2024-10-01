@@ -1,4 +1,4 @@
-import queries_and_variables.variables_sac as vs
+import queries_and_variables.variables as vs
 import numpy as np
 from functions import Dataframe as DF
 import pandas as pd

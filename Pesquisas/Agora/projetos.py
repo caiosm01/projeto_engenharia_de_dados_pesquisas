@@ -1,7 +1,7 @@
 from functions import JasonDataframe as JD, Database as DB, Dataframe as DF
 import queries_and_variables.variables_pipefy as vp
 import queries_and_variables.queries_mysql as qm
-import queries_and_variables.variables_sac as vs
+import queries_and_variables.variables as vs
 
 class DataProjetosProcessor:
     def __init__(self, Mysql, json_path, field_mapping):

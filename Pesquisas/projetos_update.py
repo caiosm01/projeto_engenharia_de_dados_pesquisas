@@ -1,6 +1,6 @@
-from queries_and_variables import variables_pipefy as vp
+from queries_and_variables import variables as vs, variables_pipefy as vp
 from functions import Database as DB, api_pipefy as AP, JasonDataframe as JD,Dataframe as DF
-from queries_and_variables import variables_sac as vs, queries_pipefy as qp
+from queries_and_variables import queries_pipefy as qp
 from dotenv import load_dotenv
 from Agora import projetos as PJ, funcionarios as FC
 from functions.api_ipesquisa import IPesquisaAPI as ip
