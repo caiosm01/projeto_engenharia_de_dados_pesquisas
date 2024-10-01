@@ -48,21 +48,3 @@ class IPesquisaAPI:
         else:
             print(f"Erro no request: {response.status_code}")
             return None
-
-
-'''# Uso da classe
-usuario = 'ba35076a-6732-4eba-9402-1b5741c700d1'
-senha = 'MzU4YWNiZjY1MDE2NDNlMmNmMjc0YzQ1ZWVlNTdiMGE='
-
-api = IPesquisaAPI(usuario, senha)
-
-# Exemplo de chamada para cada método com datas
-df_documents = api.get_list_documents(dt_gravacao_inicio='2024-01-01', dt_gravacao_fim='2024-03-11')
-print(df_documents)
-#
-# df_cases = api.get_list_cases_by_id(4484, dt_gravacao_inicio='2024-02-01', dt_gravacao_fim='2024-02-01')
-# print(df_cases)
-#
-# df_csv_cases = api.get_csv_cases_by_id(4484, dt_gravacao_inicio='2024-02-01')
-# print(df_csv_cases)  # Exibe as primeiras linhas do DataFrame, se a chamada for bem sucedida'''
-

@@ -41,7 +41,6 @@ json_to_df = JD.JsonToDataFrame()
 
 df_documents = api_ipesquisa.get_list_documents(dt_gravacao_inicio=date.today()-timedelta(days=10), dt_gravacao_fim=date.today())
 df = json_to_df.get_dataframe3(df_documents)
-#print(df[df['id']==4753])
 
 ######################## Atualização da tabela de i_pesquisa ########################################
 processor= DF.DataFrameProcessor(Mysql, df, 'mydb.i_pesquisa')

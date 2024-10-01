@@ -24,11 +24,10 @@ password = os.getenv("password")
 registros = os.getenv("registros")
 usuario_ipesquisa = os.getenv("usuario_ipesquisa")
 senha_ipesquisa = os.getenv("senha_ipesquisa")
-Escala_meta = os.getenv("Escala_meta")
 
 ################################################### CONFIGURAÇÃO DO LOG ##############################################
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename=f"C:/Users/{usuario_maquina}/OneDrive - agorap.com.br/MySQL/DW_Agora.log", level=logging.WARNING, format=LOG_FORMAT)
+logging.basicConfig(filename=f"DW_log.log", level=logging.WARNING, format=LOG_FORMAT)
 log = logging.getLogger()
 log_messages = []
 

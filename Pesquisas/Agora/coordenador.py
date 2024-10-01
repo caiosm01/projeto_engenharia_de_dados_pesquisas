@@ -1,7 +1,5 @@
 from functions import JasonDataframe as jd, Database as db, Dataframe as df
 import queries_and_variables.variables_pipefy as vp
-
-#Consulta = "C:/Users/Admin/Downloads/informações_04-01-2024 (1).xlsx"
 ################################################### INSTÂNCIAS ###################################################
 # Criação da instância com o pacote Database
 Mysql = db.DatabaseConnection(host='127.0.0.1', database='banco_sac', user='root', password='#Agora123#')

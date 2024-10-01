@@ -14,6 +14,7 @@ class ApiManager:
 
         :param Mysql: Instância do DatabaseConnection para interagir com o banco de dados.
         """
+
         self.token = os.getenv("token")
         self.url = os.getenv("url")
         self.Mysql = Mysql
@@ -24,6 +25,7 @@ class ApiManager:
 
         :raises Exception: Exceção é levantada se o limite de chamadas da API for atingido.
         """
+
         dados = self.Mysql.fetch_all("SELECT * FROM api_pipefy.api_calls WHERE id = 1;")
         chamadas = dados['calls_made'][0]
         if chamadas >= dados['calls_limit'][0]:
@@ -37,6 +39,7 @@ class ApiManager:
 
         :raises Exception: Exceção é levantada se o limite de chamadas diárias da API for atingido.
         """
+
         dados = self.Mysql.fetch_all("SELECT * FROM api_pipefy.api_calls WHERE id = 1;")
         chamadas = dados['calls_made_day'][0]
         if chamadas >= dados['calls_limit_day'][0]:
@@ -50,6 +53,7 @@ class ApiManager:
 
         :raises Exception: Exceção é levantada se o limite de chamadas por hora da API for atingido.
         """
+
         dados = self.Mysql.fetch_all("SELECT * FROM api_pipefy.api_calls WHERE id = 1;")
         chamadas = dados['calls_made_hour'][0]
         if chamadas >= dados['calls_limit_hour'][0]:
@@ -61,6 +65,7 @@ class ApiManager:
         """
         Registra uma chamada à API no banco de dados.
         """
+
         self.Mysql.execute_query("UPDATE api_pipefy.api_calls SET calls_made = calls_made + 1 WHERE id = 1")
         self.Mysql.execute_query("UPDATE api_pipefy.api_calls SET calls_made_day = calls_made_day + 1 WHERE id = 1")
         self.Mysql.execute_query("UPDATE api_pipefy.api_calls SET calls_made_hour = calls_made_hour + 1 WHERE id = 1")
@@ -104,32 +109,3 @@ class ApiManager:
             msg = f'Erro com a api do pipefy: {e}'
             print(msg)
             return msg
-
-
-
-
-# query_pipe = """{allCards(pipeId:303834641)
-#   {edges
-#     {
-#       node{
-#         current_phase{
-#           name}
-#         id
-#         title
-#         fields
-#         {name
-#           value
-#         }
-#       }
-#     }
-#     }
-#   }"""
-#
-#
-# Mysql = DB.DatabaseConnection(host='127.0.0.1', database='banco_sac', user='root', password='#Agora123#')
-# Mysql.connect()
-# api_manager = ApiManager(Mysql)
-# try:
-#     dados_api = api_manager.chamar_api(query_pipe, vp.caminho_json_projetos)
-# except Exception as e:
-#     print(e)
