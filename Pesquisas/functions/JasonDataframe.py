@@ -106,25 +106,3 @@ class JsonToDataFrame:
         #if self.check_errors():
         self.process_ipesquisa_data()
         return self.df
-
-
-
-
-
-
-'''field_mapping = {
-    "Data de início do Projeto": "inicio_projeto",
-    'Data do pré-teste da Pesquisa F2F': "Data_pre_teste_campo",
-    "Data do pré-teste da Pesquisa CATI": "Data_pre_teste_cati",
-    "Início | Etapa F2F": "inicio_campo",
-    "Início | Etapa CATI": "inicio_cati",
-    "Fim | Etapa F2F": "fim_campo",
-    "Fim | Etapa CATI": "fim_cati"
-    # Adicione aqui os outros mapeamentos necessários
-}
-
-json_to_df = JsonToDataFrame()
-#df1 = json_to_df.get_dataframe('projetos.json', field_mapping)
-df2 = json_to_df.get_dataframe(r"C:/Users/Admin/PycharmProjects/Pesquisas/projetos.json", field_mapping)
-
-print(df2)'''
